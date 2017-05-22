@@ -52,6 +52,7 @@ package com.alibaba.com.caucho.hessian.io;
  * Exception for faults when the fault doesn't return a java exception.
  * This exception is required for MicroHessianInput.
  */
+@SuppressWarnings(value="unchecked")
 public class HessianServiceException extends Exception {
   private String code;
   private Object detail;

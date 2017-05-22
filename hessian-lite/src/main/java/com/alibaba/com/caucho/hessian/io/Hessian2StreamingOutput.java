@@ -55,6 +55,7 @@ import java.util.HashMap;
 /**
  * Output stream for Hessian 2 streaming requests.
  */
+@SuppressWarnings(value="unchecked")
 public class Hessian2StreamingOutput
 {
   private Hessian2Output _out;

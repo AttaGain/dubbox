@@ -72,6 +72,7 @@ import java.util.IdentityHashMap;
  * out.completeCall();      // complete the call
  * </pre>
  */
+@SuppressWarnings(value="unchecked")
 public class HessianOutput extends AbstractHessianOutput {
   // the output stream/
   protected OutputStream os;

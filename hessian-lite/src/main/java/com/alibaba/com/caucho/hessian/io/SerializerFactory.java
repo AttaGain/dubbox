@@ -59,6 +59,7 @@ import javax.management.*;
 /**
  * Factory for returning serialization methods.
  */
+@SuppressWarnings(value="unchecked")
 public class SerializerFactory extends AbstractSerializerFactory
 {
   private static final Logger log

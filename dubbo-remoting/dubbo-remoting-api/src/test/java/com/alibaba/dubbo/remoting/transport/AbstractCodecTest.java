@@ -1,4 +1,4 @@
-/*
+ /*
  * Copyright 1999-2011 Alibaba Group.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,6 +32,7 @@ import static org.hamcrest.CoreMatchers.*;
 /**
  * @author ding.lid
  */
+@SuppressWarnings(value="unchecked")
 public class AbstractCodecTest extends TestCase {
 
     public void test_checkPayload_default8M() throws Exception {

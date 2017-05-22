@@ -54,6 +54,7 @@ import java.util.HashMap;
 /**
  * Serializing an object for known object types.
  */
+@SuppressWarnings(value="unchecked")
 public class AbstractMapDeserializer extends AbstractDeserializer {
   
   public Class getType()

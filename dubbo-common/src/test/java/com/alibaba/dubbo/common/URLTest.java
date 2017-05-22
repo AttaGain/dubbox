@@ -33,6 +33,7 @@ import com.alibaba.dubbo.common.utils.CollectionUtils;
  * @author ding.lid
  * @author william.liangf
  */
+@SuppressWarnings(value="unchecked")
 public class URLTest {
 
     @Test

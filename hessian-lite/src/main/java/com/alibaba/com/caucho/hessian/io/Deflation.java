@@ -54,7 +54,7 @@ import java.util.zip.*;
 import java.io.*;
 
 import com.alibaba.com.caucho.hessian.io.*;
-
+@SuppressWarnings(value="unchecked")
 public class Deflation extends HessianEnvelope {
   public Deflation()
   {

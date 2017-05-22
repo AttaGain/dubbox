@@ -54,6 +54,7 @@ import java.lang.reflect.Constructor;
 /**
  * Deserializing a string valued object
  */
+@SuppressWarnings(value="unchecked")
 public class SqlDateDeserializer extends AbstractDeserializer {
   private Class _cl;
   private Constructor _constructor;

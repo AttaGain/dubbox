@@ -49,7 +49,7 @@
 package com.alibaba.com.caucho.hessian.io;
 
 import java.util.logging.*;
-
+@SuppressWarnings(value="unchecked")
 public class EnvelopeFactory
 {
   private static final Logger log

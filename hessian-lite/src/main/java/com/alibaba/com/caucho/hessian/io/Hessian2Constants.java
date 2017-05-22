@@ -47,7 +47,7 @@
  */
 
 package com.alibaba.com.caucho.hessian.io;
-
+@SuppressWarnings(value="unchecked")
 public interface Hessian2Constants
 {
   public static final int BC_BINARY = 'B'; // final chunk

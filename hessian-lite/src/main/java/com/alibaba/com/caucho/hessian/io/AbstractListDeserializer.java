@@ -53,6 +53,7 @@ import java.io.IOException;
 /**
  * Deserializing a JDK 1.2 Collection.
  */
+@SuppressWarnings(value="unchecked")
 public class AbstractListDeserializer extends AbstractDeserializer {
   public Object readObject(AbstractHessianInput in)
     throws IOException

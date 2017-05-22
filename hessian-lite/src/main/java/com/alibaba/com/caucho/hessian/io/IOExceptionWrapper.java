@@ -53,6 +53,7 @@ import java.io.IOException;
 /**
  * Exception wrapper for IO.
  */
+@SuppressWarnings(value="unchecked")
 public class IOExceptionWrapper extends IOException {
   private Throwable _cause;
   

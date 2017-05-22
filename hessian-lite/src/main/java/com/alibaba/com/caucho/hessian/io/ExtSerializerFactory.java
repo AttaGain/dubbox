@@ -53,6 +53,7 @@ import java.util.HashMap;
 /**
  * Factory for returning serialization methods.
  */
+@SuppressWarnings(value="unchecked")
 public class ExtSerializerFactory extends AbstractSerializerFactory {
   private HashMap _serializerMap = new HashMap();
   private HashMap _deserializerMap = new HashMap();

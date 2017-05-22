@@ -36,6 +36,7 @@ import com.alibaba.dubbo.rpc.support.Type;
  * 
  * @author tony.chenl
  */
+@SuppressWarnings(value="unchecked")
 public class CompatibleFilterFilterTest {
 
     Filter     compatibleFilter = new CompatibleFilter();

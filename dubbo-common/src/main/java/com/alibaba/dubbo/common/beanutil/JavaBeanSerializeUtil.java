@@ -33,6 +33,7 @@ import com.alibaba.dubbo.common.utils.ReflectUtils;
 /**
  * @author <a href="mailto:gang.lvg@taobao.com">kimi</a>
  */
+@SuppressWarnings(value="unchecked")
 public final class JavaBeanSerializeUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(JavaBeanSerializeUtil.class);

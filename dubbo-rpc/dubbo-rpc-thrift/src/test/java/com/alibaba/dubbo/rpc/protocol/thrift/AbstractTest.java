@@ -33,6 +33,7 @@ import org.junit.Before;
 /**
  * @author gang.lvg 2011-11-25 13:05
  */
+@SuppressWarnings(value="unchecked")
 public abstract class AbstractTest {
 
     static final int PORT = 30660;

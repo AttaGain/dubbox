@@ -60,6 +60,7 @@ import java.util.logging.Logger;
 /**
  * Serializing an object for known object types.
  */
+@SuppressWarnings(value="unchecked")
 public class JavaSerializer extends AbstractSerializer
 {
   private static final Logger log

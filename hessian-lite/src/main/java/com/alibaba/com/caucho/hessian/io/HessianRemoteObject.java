@@ -51,6 +51,7 @@ package com.alibaba.com.caucho.hessian.io;
 /**
  * Interface for any hessian remote object.
  */
+@SuppressWarnings(value="unchecked")
 public interface HessianRemoteObject {
   public String getHessianType();
   public String getHessianURL();

@@ -54,6 +54,7 @@ import java.util.HashMap;
 /**
  * Deserializing a JDK 1.4 StackTraceElement
  */
+@SuppressWarnings(value="unchecked")
 public class StackTraceElementDeserializer extends JavaDeserializer {
   public StackTraceElementDeserializer()
   {

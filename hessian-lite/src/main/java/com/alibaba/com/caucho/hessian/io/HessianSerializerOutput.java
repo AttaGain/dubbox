@@ -82,6 +82,7 @@ import java.lang.reflect.Modifier;
  * out.completeCall();      // complete the call
  * </pre>
  */
+@SuppressWarnings(value="unchecked")
 public class HessianSerializerOutput extends HessianOutput {
   /**
    * Creates a new Hessian output stream, initialized with an

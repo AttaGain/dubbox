@@ -53,6 +53,7 @@ import java.util.Locale;
 /**
  * Handle for a locale object.
  */
+@SuppressWarnings(value="unchecked")
 public class LocaleHandle implements java.io.Serializable, HessianHandle {
   private String value;
 

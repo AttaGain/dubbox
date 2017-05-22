@@ -59,6 +59,7 @@ import java.util.logging.Level;
 /**
  * Debugging output stream for Hessian requests.
  */
+@SuppressWarnings(value="unchecked")
 public class HessianDebugOutputStream extends OutputStream
 {
   private OutputStream _os;

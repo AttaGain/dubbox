@@ -65,6 +65,7 @@ import java.io.Reader;
  * in.completeReply();      // read reply footer
  * </pre>
  */
+@SuppressWarnings(value="unchecked")
 abstract public class AbstractHessianInput {
   private HessianRemoteResolver resolver;
   

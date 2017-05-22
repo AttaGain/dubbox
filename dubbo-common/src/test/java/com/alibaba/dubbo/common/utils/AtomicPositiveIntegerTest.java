@@ -26,6 +26,7 @@ import org.junit.Test;
 /**
  * @author ding.lid
  */
+@SuppressWarnings(value="unchecked")
 public class AtomicPositiveIntegerTest {
     AtomicPositiveInteger i1 = new AtomicPositiveInteger();
 

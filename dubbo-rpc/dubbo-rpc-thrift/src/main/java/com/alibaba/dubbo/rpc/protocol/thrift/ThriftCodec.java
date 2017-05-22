@@ -71,6 +71,7 @@ import com.alibaba.dubbo.rpc.protocol.thrift.io.RandomAccessByteArrayOutputStrea
  *
  * @author <a href="mailto:gang.lvg@alibaba-inc.com">gang.lvg</a>
  */
+@SuppressWarnings(value="unchecked")
 public class ThriftCodec implements Codec2 {
 
     private static final AtomicInteger THRIFT_SEQ_ID = new AtomicInteger( 0 );

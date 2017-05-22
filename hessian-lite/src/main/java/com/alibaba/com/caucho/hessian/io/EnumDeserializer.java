@@ -54,6 +54,7 @@ import java.lang.reflect.Method;
 /**
  * Deserializing an enum valued object
  */
+@SuppressWarnings(value="unchecked")
 public class EnumDeserializer extends AbstractDeserializer {
   private Class _enumType;
   private Method _valueOf;

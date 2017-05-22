@@ -53,6 +53,7 @@ import java.io.IOException;
 /**
  * Exception during field reading.
  */
+@SuppressWarnings(value="unchecked")
 public class HessianFieldException extends HessianProtocolException {
   /**
    * Zero-arg constructor.

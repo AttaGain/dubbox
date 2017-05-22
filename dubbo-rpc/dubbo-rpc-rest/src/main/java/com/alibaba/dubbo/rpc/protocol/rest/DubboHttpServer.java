@@ -37,6 +37,7 @@ import java.util.Enumeration;
 /**
  * @author lishen
  */
+@SuppressWarnings(value="unchecked")
 public class DubboHttpServer extends BaseRestServer {
 
     private final HttpServletDispatcher dispatcher = new HttpServletDispatcher();

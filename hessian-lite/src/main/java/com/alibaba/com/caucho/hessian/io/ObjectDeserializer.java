@@ -55,6 +55,7 @@ import java.util.Date;
 /**
  * Serializing an object for known object types.
  */
+@SuppressWarnings(value="unchecked")
 public class ObjectDeserializer extends AbstractDeserializer {
   private Class _cl;
 

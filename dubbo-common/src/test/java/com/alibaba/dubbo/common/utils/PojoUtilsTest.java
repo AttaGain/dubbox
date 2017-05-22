@@ -47,6 +47,7 @@ import com.alibaba.dubbo.common.model.person.Phone;
 /**
  * @author ding.lid
  */
+@SuppressWarnings(value="unchecked")
 public class PojoUtilsTest {
     
     public void assertObject(Object data) {

@@ -73,6 +73,7 @@ import java.util.HashMap;
  * out.completeCall();        // complete the call
  * </pre>
  */
+@SuppressWarnings(value="unchecked")
 public class Hessian2Output
   extends AbstractHessianOutput
   implements Hessian2Constants

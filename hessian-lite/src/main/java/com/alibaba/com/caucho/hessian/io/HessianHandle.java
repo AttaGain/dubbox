@@ -51,5 +51,6 @@ package com.alibaba.com.caucho.hessian.io;
 /**
  * Marks a type as a handle
  */
+@SuppressWarnings(value="unchecked")
 public interface HessianHandle {
 }

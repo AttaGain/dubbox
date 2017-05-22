@@ -55,6 +55,7 @@ import java.lang.reflect.*;
 /**
  * Deserializing a JDK 1.2 Map.
  */
+@SuppressWarnings(value="unchecked")
 public class MapDeserializer extends AbstractMapDeserializer {
   private Class _type;
   private Constructor _ctor;

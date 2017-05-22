@@ -5,6 +5,7 @@ import java.math.BigInteger;
 /**
  * @author <a href="mailto:gang.lvg@alibaba-inc.com">kimi</a>
  */
+@SuppressWarnings(value="unchecked")
 public class BigIntegerDeserializer extends JavaDeserializer {
 
     public BigIntegerDeserializer() {

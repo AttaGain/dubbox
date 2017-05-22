@@ -55,6 +55,7 @@ package com.alibaba.com.caucho.hessian.util;
  * <p>The convenience of IntMap is avoiding all the silly wrapping of
  * integers.
  */
+@SuppressWarnings(value="unchecked")
 public class IntMap {
   /**
    * Encoding of a null entry.  Since NULL is equal to Integer.MIN_VALUE, 

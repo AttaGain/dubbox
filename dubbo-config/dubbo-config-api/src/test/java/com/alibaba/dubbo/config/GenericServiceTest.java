@@ -45,6 +45,7 @@ import com.alibaba.dubbo.rpc.service.GenericService;
  *
  * @author william.liangf
  */
+@SuppressWarnings(value="unchecked")
 public class GenericServiceTest {
 
     @Test

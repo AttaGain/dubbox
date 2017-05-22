@@ -19,7 +19,7 @@ package com.alibaba.dubbo.common.serialize.support.kryo;
  * @author lishen
  */
 public abstract class ReflectionUtils {
-
+    @SuppressWarnings(value="unchecked")
     public static boolean checkZeroArgConstructor(Class clazz) {
         try {
             clazz.getDeclaredConstructor();

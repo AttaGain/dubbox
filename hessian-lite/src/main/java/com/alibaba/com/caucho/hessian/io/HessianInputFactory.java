@@ -50,7 +50,7 @@ package com.alibaba.com.caucho.hessian.io;
 
 import java.util.logging.*;
 import java.io.*;
-
+@SuppressWarnings(value="unchecked")
 public class HessianInputFactory
 {
   public static final Logger log

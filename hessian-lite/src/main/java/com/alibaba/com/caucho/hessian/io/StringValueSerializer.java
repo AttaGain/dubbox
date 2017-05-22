@@ -53,6 +53,7 @@ import java.io.IOException;
 /**
  * Serializing a remote object.
  */
+@SuppressWarnings(value="unchecked")
 public class StringValueSerializer extends AbstractSerializer {
   public void writeObject(Object obj, AbstractHessianOutput out)
     throws IOException

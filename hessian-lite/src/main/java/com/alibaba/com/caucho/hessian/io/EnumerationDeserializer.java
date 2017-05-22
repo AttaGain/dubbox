@@ -54,6 +54,7 @@ import java.util.Vector;
 /**
  * Deserializing a JDK 1.2 Collection.
  */
+@SuppressWarnings(value="unchecked")
 public class EnumerationDeserializer extends AbstractListDeserializer {
   private static EnumerationDeserializer _deserializer;
 

@@ -53,6 +53,7 @@ import java.io.IOException;
 /**
  * Looks up remote objects.  The default just returns a HessianRemote object.
  */
+@SuppressWarnings(value="unchecked")
 public interface HessianRemoteResolver {
   /**
    * Looks up a proxy object.

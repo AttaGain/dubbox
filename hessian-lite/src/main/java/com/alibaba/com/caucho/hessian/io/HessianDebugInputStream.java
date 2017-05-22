@@ -60,6 +60,7 @@ import java.util.logging.Level;
 /**
  * Debugging input stream for Hessian requests.
  */
+@SuppressWarnings(value="unchecked")
 public class HessianDebugInputStream extends InputStream
 {
   private InputStream _is;

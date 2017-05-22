@@ -52,6 +52,7 @@ package com.alibaba.com.caucho.hessian.io;
  * Encapsulates a remote address when no stub is available, e.g. for
  * Java MicroEdition.
  */
+@SuppressWarnings(value="unchecked")
 public class HessianRemote {
   private String type;
   private String url;

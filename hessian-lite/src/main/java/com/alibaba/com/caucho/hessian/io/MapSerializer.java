@@ -56,6 +56,7 @@ import java.util.Map;
 /**
  * Serializing a JDK 1.2 java.util.Map.
  */
+@SuppressWarnings(value="unchecked")
 public class MapSerializer extends AbstractSerializer {
   private boolean _isSendJavaType = true;
 

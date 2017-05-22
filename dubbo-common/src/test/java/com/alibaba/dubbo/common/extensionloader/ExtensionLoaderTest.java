@@ -58,6 +58,7 @@ import com.alibaba.dubbo.common.extensionloader.ext6_wrap.impl.Ext5Wrapper2;
 /**
  * @author ding.lid
  */
+@SuppressWarnings(value="unchecked")
 public class ExtensionLoaderTest {
     @Test
     public void test_getExtensionLoader_Null() throws Exception {

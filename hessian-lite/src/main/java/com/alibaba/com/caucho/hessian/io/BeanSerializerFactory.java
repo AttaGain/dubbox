@@ -51,6 +51,7 @@ package com.alibaba.com.caucho.hessian.io;
 /**
  * Factory for returning serialization methods.
  */
+@SuppressWarnings(value="unchecked")
 public class BeanSerializerFactory extends SerializerFactory {
   /**
    * Returns the default serializer for a class that isn't matched

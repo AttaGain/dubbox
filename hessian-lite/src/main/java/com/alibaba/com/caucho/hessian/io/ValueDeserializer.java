@@ -53,6 +53,7 @@ import java.io.IOException;
 /**
  * Deserializing a string valued object
  */
+@SuppressWarnings(value="unchecked")
 abstract public class ValueDeserializer extends AbstractDeserializer {
   public Object readMap(AbstractHessianInput in)
     throws IOException

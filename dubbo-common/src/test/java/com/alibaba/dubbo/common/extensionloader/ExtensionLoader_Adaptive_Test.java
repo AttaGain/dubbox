@@ -40,6 +40,7 @@ import static org.junit.matchers.JUnitMatchers.containsString;
 /**
  * @author ding.lid
  */
+@SuppressWarnings(value="unchecked")
 public class ExtensionLoader_Adaptive_Test {
 
     @Test

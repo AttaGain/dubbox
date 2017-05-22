@@ -54,6 +54,7 @@ import java.util.*;
 /**
  * Deserializing a JDK 1.2 Collection.
  */
+@SuppressWarnings(value="unchecked")
 public class CollectionDeserializer extends AbstractListDeserializer {
   private Class _type;
   

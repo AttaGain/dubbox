@@ -55,6 +55,7 @@ import java.util.GregorianCalendar;
 /**
  * Handle for a calendar object.
  */
+@SuppressWarnings(value="unchecked")
 public class CalendarHandle implements java.io.Serializable, HessianHandle {
   private Class type;
   private Date date;

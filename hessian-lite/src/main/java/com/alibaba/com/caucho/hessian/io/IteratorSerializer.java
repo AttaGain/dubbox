@@ -54,6 +54,7 @@ import java.util.Iterator;
 /**
  * Serializing a JDK 1.2 Iterator.
  */
+@SuppressWarnings(value="unchecked")
 public class IteratorSerializer extends AbstractSerializer {
   private static IteratorSerializer _serializer;
 

@@ -53,6 +53,7 @@ import java.io.*;
 /**
  * Factory class for wrapping and unwrapping hessian streams.
  */
+@SuppressWarnings(value="unchecked")
 abstract public class HessianEnvelope {
   /**
    * Wrap the Hessian output stream in an envelope.

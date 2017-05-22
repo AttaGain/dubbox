@@ -54,6 +54,7 @@ import java.util.Calendar;
 /**
  * Serializing a calendar.
  */
+@SuppressWarnings(value="unchecked")
 public class CalendarSerializer extends AbstractSerializer {
   private static CalendarSerializer SERIALIZER = new CalendarSerializer();
 

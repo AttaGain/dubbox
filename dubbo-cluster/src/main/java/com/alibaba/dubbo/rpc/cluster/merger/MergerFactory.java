@@ -27,6 +27,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * @author <a href="mailto:gang.lvg@alibaba-inc.com">kimi</a>
  */
+@SuppressWarnings(value="unchecked")
 public class MergerFactory {
 
     private static final ConcurrentMap<Class<?>, Merger<?>> mergerCache =

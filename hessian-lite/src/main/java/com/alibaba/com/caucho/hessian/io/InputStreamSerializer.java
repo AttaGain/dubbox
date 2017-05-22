@@ -54,6 +54,7 @@ import java.io.InputStream;
 /**
  * Serializing a stream object.
  */
+@SuppressWarnings(value="unchecked")
 public class InputStreamSerializer extends AbstractSerializer {
   public InputStreamSerializer()
   {

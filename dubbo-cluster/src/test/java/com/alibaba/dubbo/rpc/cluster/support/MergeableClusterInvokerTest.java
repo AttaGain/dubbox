@@ -38,6 +38,7 @@ import java.util.Map;
 /**
  * @author <a href="mailto:gang.lvg@alibaba-inc.com">kimi</a>
  */
+@SuppressWarnings(value="unchecked")
 public class MergeableClusterInvokerTest {
 
     private Directory directory = EasyMock.createMock( Directory.class );

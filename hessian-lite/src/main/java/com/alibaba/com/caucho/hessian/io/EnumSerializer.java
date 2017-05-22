@@ -54,6 +54,7 @@ import java.lang.reflect.Method;
 /**
  * Serializing an object for known object types.
  */
+@SuppressWarnings(value="unchecked")
 public class EnumSerializer extends AbstractSerializer {
   private Method _name;
   

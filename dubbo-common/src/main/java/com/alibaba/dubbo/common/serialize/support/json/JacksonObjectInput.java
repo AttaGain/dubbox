@@ -32,6 +32,7 @@ import java.util.Map;
  *
  * @author dylan
  */
+@SuppressWarnings(value="unchecked")
 public class JacksonObjectInput implements ObjectInput {
     private static Logger logger = LoggerFactory.getLogger(JacksonObjectInput.class);
 

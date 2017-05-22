@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+@SuppressWarnings(value="unchecked")
 public class $__DemoStub {
 
   public interface Iface {

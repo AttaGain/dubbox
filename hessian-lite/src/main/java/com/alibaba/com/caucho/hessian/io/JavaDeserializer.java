@@ -61,6 +61,7 @@ import java.util.logging.*;
 /**
  * Serializing an object for known object types.
  */
+@SuppressWarnings(value="unchecked")
 public class JavaDeserializer extends AbstractMapDeserializer {
   private static final Logger log
     = Logger.getLogger(JavaDeserializer.class.getName());

@@ -54,6 +54,7 @@ import java.util.logging.*;
 /**
  * Serializing an object. 
  */
+@SuppressWarnings(value="unchecked")
 abstract public class AbstractSerializer implements Serializer {
   protected static final Logger log
     = Logger.getLogger(AbstractSerializer.class.getName());

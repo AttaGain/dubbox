@@ -34,7 +34,7 @@ import org.junit.Test;
 import com.alibaba.dubbo.common.io.Bytes;
 import com.alibaba.dubbo.common.io.UnsafeByteArrayOutputStream;
 import com.alibaba.dubbo.common.serialize.support.dubbo.Builder;
-
+@SuppressWarnings(value="unchecked")
 public class BuilderTest
 {
     @Test

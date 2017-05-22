@@ -71,6 +71,7 @@ import junit.framework.Assert;
  * 
  * @author william.liangf
  */
+@SuppressWarnings(value="unchecked")
 public class ConfigTest {
     
     @Test

@@ -27,6 +27,7 @@ import java.util.List;
  * @author <a href="mailto:gang.lvg@alibaba-inc.com">kimi</a>
  * @see com.alibaba.dubbo.remoting.transport.MultiMessageHandler
  */
+@SuppressWarnings(value="unchecked")
 public final class MultiMessage implements Iterable {
 
     public static MultiMessage createFromCollection(Collection collection) {

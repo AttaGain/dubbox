@@ -27,6 +27,7 @@ import com.alibaba.dubbo.rpc.RpcResult;
  * 
  * @author tony.chenl
  */
+@SuppressWarnings(value="unchecked")
 public class MyInvoker<T> implements Invoker<T> {
 
     URL      url;

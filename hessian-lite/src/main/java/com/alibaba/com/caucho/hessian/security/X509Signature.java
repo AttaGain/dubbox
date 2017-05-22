@@ -56,7 +56,7 @@ import javax.crypto.*;
 import java.io.*;
 
 import com.alibaba.com.caucho.hessian.io.*;
-
+@SuppressWarnings(value="unchecked")
 public class X509Signature extends HessianEnvelope {
   private String _algorithm = "HmacSHA256";
   private X509Certificate _cert;

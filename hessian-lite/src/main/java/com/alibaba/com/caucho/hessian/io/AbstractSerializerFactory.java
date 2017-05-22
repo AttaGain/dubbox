@@ -51,6 +51,7 @@ package com.alibaba.com.caucho.hessian.io;
 /**
  * Factory for returning serialization methods.
  */
+@SuppressWarnings(value="unchecked")
 abstract public class AbstractSerializerFactory {
   /**
    * Returns the serializer for a class.

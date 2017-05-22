@@ -57,6 +57,7 @@ import java.util.Iterator;
 /**
  * Serializing a JDK 1.2 Collection.
  */
+@SuppressWarnings(value="unchecked")
 public class CollectionSerializer extends AbstractSerializer
 {
   private boolean _sendJavaType = true;

@@ -55,6 +55,7 @@ import java.util.ArrayList;
 /**
  * Deserializing a Java array
  */
+@SuppressWarnings(value="unchecked")
 public class ArrayDeserializer extends AbstractListDeserializer {
   private Class _componentType;
   private Class _type;

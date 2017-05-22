@@ -54,6 +54,7 @@ import java.util.Enumeration;
 /**
  * Serializing a JDK 1.2 Enumeration.
  */
+@SuppressWarnings(value="unchecked")
 public class EnumerationSerializer extends AbstractSerializer {
   private static EnumerationSerializer _serializer;
 

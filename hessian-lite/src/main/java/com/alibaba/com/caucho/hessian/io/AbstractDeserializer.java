@@ -53,6 +53,7 @@ import java.io.IOException;
 /**
  * Deserializing an object. 
  */
+@SuppressWarnings(value="unchecked")
 abstract public class AbstractDeserializer implements Deserializer {
   public Class getType()
   {

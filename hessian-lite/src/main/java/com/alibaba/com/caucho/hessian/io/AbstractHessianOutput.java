@@ -64,6 +64,7 @@ import java.io.OutputStream;
  * out.completeCall();      // complete the call
  * </pre>
  */
+@SuppressWarnings(value="unchecked")
 abstract public class AbstractHessianOutput {
   // serializer factory
   protected SerializerFactory _serializerFactory;

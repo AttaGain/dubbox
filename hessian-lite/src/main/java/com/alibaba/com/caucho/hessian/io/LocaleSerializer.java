@@ -54,6 +54,7 @@ import java.util.Locale;
 /**
  * Serializing a locale.
  */
+@SuppressWarnings(value="unchecked")
 public class LocaleSerializer extends AbstractSerializer {
   private static LocaleSerializer SERIALIZER = new LocaleSerializer();
 

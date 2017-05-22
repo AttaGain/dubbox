@@ -71,6 +71,7 @@ import java.util.logging.*;
  * in.completeReply();      // read reply footer
  * </pre>
  */
+@SuppressWarnings(value="unchecked")
 public class Hessian2Input
   extends AbstractHessianInput
   implements Hessian2Constants

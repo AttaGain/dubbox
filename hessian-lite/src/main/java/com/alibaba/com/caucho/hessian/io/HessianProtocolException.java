@@ -54,6 +54,7 @@ import java.io.IOException;
  * Exception for faults when the fault doesn't return a java exception.
  * This exception is required for MicroHessianInput.
  */
+@SuppressWarnings(value="unchecked")
 public class HessianProtocolException extends IOException {
   private Throwable rootCause;
   

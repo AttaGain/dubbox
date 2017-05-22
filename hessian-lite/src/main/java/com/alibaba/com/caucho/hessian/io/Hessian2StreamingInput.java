@@ -54,6 +54,7 @@ import java.io.InputStream;
 /**
  * Output stream for Hessian 2 streaming requests.
  */
+@SuppressWarnings(value="unchecked")
 public class Hessian2StreamingInput
 {
   private Hessian2Input _in;

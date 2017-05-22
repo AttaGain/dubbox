@@ -59,6 +59,7 @@ import java.util.logging.*;
 /**
  * Serializing an object for known object types.
  */
+@SuppressWarnings(value="unchecked")
 public class BeanSerializer extends AbstractSerializer {
   private static final Logger log
     = Logger.getLogger(BeanSerializer.class.getName());

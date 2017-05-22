@@ -73,6 +73,7 @@ import java.util.HashMap;
  * in.completeReply();      // read reply footer
  * </pre>
  */
+@SuppressWarnings(value="unchecked")
 public class HessianInput extends AbstractHessianInput {
   private static int END_OF_DATA = -2;
 

@@ -55,6 +55,7 @@ import java.util.Date;
 /**
  * Serializing an object for known object types.
  */
+@SuppressWarnings(value="unchecked")
 public class BasicDeserializer extends AbstractDeserializer {
   public static final int NULL = BasicSerializer.NULL;
   public static final int BOOLEAN = BasicSerializer.BOOLEAN;

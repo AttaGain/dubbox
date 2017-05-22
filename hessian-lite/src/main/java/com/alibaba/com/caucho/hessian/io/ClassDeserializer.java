@@ -54,6 +54,7 @@ import java.util.HashMap;
 /**
  * Deserializing a JDK 1.2 Class.
  */
+@SuppressWarnings(value="unchecked")
 public class ClassDeserializer extends AbstractMapDeserializer {
   private static final HashMap<String,Class> _primClasses
     = new HashMap<String,Class>();
