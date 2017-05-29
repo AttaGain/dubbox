@@ -32,6 +32,7 @@ import com.alibaba.dubbo.common.serialize.Serialization;
  * @author ding.lid
  * @author tony.chenl
  */
+@SuppressWarnings("unchecked")
 public class ConfigUtilsTest {
 
     public static <T> List<T> toArray(T... args) {

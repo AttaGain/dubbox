@@ -22,7 +22,7 @@ import com.alibaba.dubbo.common.extension.SPI;
  */
 @SPI
 public interface Merger<T> {
-
+    @SuppressWarnings("unchecked")
     T merge(T... items);
 
 }
