@@ -115,7 +115,7 @@
         <webx_version>3.0.8</webx_version>
         <jackson_version>2.8.8</jackson_version>
         <commons_pool_version>1.6</commons_pool_version>
-        <tomcat_embed_version>8.0.11</tomcat_embed_version>
+        <tomcat_embed_version>8.5.15</tomcat_embed_version>
         <javax_ws_rs_version>2.0</javax_ws_rs_version>
         <jboss_resteasy_version>3.0.7.Final</jboss_resteasy_version>
         <esotericsoftware_kryo_version>2.24.0</esotericsoftware_kryo_version>
