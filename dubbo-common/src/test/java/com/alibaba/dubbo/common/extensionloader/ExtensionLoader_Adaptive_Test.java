@@ -27,20 +27,23 @@ import com.alibaba.dubbo.common.extensionloader.ext4.NoUrlParamExt;
 import com.alibaba.dubbo.common.extensionloader.ext5.NoAdaptiveMethodExt;
 import com.alibaba.dubbo.common.extensionloader.ext6_inject.Ext6;
 import com.alibaba.dubbo.common.extensionloader.ext6_inject.impl.Ext6Impl2;
-import com.alibaba.dubbo.common.utils.LogUtil;
-import junit.framework.Assert;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.allOf;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.junit.matchers.JUnitMatchers.containsString;
 
 /**
  * @author ding.lid
  */
-@SuppressWarnings(value="unchecked")
+@SuppressWarnings(value = "unchecked")
 public class ExtensionLoader_Adaptive_Test {
 
     @Test
@@ -137,14 +140,14 @@ public class ExtensionLoader_Adaptive_Test {
             assertEquals("url == null", e.getMessage());
         }
     }
-    
+
     @Test
     public void test_getAdaptiveExtension_ExceptionWhenNoAdaptiveMethodOnInterface() throws Exception {
         try {
             ExtensionLoader.getExtensionLoader(NoAdaptiveMethodExt.class).getAdaptiveExtension();
             fail();
         } catch (IllegalStateException expected) {
-            assertThat(expected.getMessage(), 
+            assertThat(expected.getMessage(),
                     allOf(containsString("Can not create adaptive extenstion interface com.alibaba.dubbo.common.extensionloader.ext5.NoAdaptiveMethodExt"),
                             containsString("No adaptive method on extension com.alibaba.dubbo.common.extensionloader.ext5.NoAdaptiveMethodExt, refuse to create the adaptive class")));
         }
@@ -153,7 +156,7 @@ public class ExtensionLoader_Adaptive_Test {
             ExtensionLoader.getExtensionLoader(NoAdaptiveMethodExt.class).getAdaptiveExtension();
             fail();
         } catch (IllegalStateException expected) {
-            assertThat(expected.getMessage(), 
+            assertThat(expected.getMessage(),
                     allOf(containsString("Can not create adaptive extenstion interface com.alibaba.dubbo.common.extensionloader.ext5.NoAdaptiveMethodExt"),
                             containsString("No adaptive method on extension com.alibaba.dubbo.common.extensionloader.ext5.NoAdaptiveMethodExt, refuse to create the adaptive class")));
         }
@@ -176,7 +179,7 @@ public class ExtensionLoader_Adaptive_Test {
                     containsString("of interface com.alibaba.dubbo.common.extensionloader.ext1.SimpleExt is not adaptive method!"));
         }
     }
-    
+
     @Test
     public void test_getAdaptiveExtension_ExceptionWhenNoUrlAttribute() throws Exception {
         try {
@@ -191,14 +194,14 @@ public class ExtensionLoader_Adaptive_Test {
     @Test
     public void test_urlHolder_getAdaptiveExtension() throws Exception {
         Ext2 ext = ExtensionLoader.getExtensionLoader(Ext2.class).getAdaptiveExtension();
-        
+
         Map<String, String> map = new HashMap<String, String>();
         map.put("ext2", "impl1");
         URL url = new URL("p1", "1.2.3.4", 1010, "path1", map);
-        
+
         UrlHolder holder = new UrlHolder();
         holder.setUrl(url);
-    
+
         String echo = ext.echo(holder, "haha");
         assertEquals("Ext2Impl1-echo", echo);
     }
@@ -211,14 +214,14 @@ public class ExtensionLoader_Adaptive_Test {
 
         UrlHolder holder = new UrlHolder();
         holder.setUrl(url);
-        
+
         try {
             ext.echo(holder, "haha");
             fail();
         } catch (IllegalStateException expected) {
             assertThat(expected.getMessage(), containsString("Fail to get extension("));
         }
-        
+
         url = url.addParameter("ext2", "XXX");
         holder.setUrl(url);
         try {
@@ -239,7 +242,7 @@ public class ExtensionLoader_Adaptive_Test {
         } catch (IllegalArgumentException e) {
             assertEquals("com.alibaba.dubbo.common.extensionloader.ext2.UrlHolder argument == null", e.getMessage());
         }
-        
+
         try {
             ext.echo(new UrlHolder(), "haha");
             fail();
@@ -274,14 +277,14 @@ public class ExtensionLoader_Adaptive_Test {
 
         UrlHolder holder = new UrlHolder();
         holder.setUrl(url);
-        
+
         try {
             ext.echo(holder, "impl1");
             fail();
         } catch (IllegalStateException expected) {
             assertThat(expected.getMessage(), containsString("Fail to get extension("));
         }
-        
+
         url = url.addParameter("key1", "impl1");
         holder.setUrl(url);
         try {
@@ -291,29 +294,29 @@ public class ExtensionLoader_Adaptive_Test {
             assertThat(expected.getMessage(), containsString("Fail to get extension(com.alibaba.dubbo.common.extensionloader.ext2.Ext2) name from url"));
         }
     }
-    
+
     @Test
     public void test_getAdaptiveExtension_inject() throws Exception {
-        LogUtil.start();
+        // LogUtil.start();
         Ext6 ext = ExtensionLoader.getExtensionLoader(Ext6.class).getAdaptiveExtension();
 
         URL url = new URL("p1", "1.2.3.4", 1010, "path1");
         url = url.addParameters("ext6", "impl1");
-        
+
         assertEquals("Ext6Impl1-echo-Ext1Impl1-echo", ext.echo(url, "ha"));
-        
-        Assert.assertTrue("can not find error.", LogUtil.checkNoError());
-        LogUtil.stop();
-        
+
+        // Assert.assertTrue("can not find error.", LogUtil.checkNoError());
+        // LogUtil.stop();
+
         url = url.addParameters("simple.ext", "impl2");
         assertEquals("Ext6Impl1-echo-Ext1Impl2-echo", ext.echo(url, "ha"));
-        
+
     }
-    
+
     @Test
     public void test_getAdaptiveExtension_InjectNotExtFail() throws Exception {
         Ext6 ext = ExtensionLoader.getExtensionLoader(Ext6.class).getExtension("impl2");
-        
+
         Ext6Impl2 impl = (Ext6Impl2) ext;
         assertNull(impl.getList());
     }

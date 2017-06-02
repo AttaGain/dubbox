@@ -15,20 +15,14 @@
  */
 package com.alibaba.dubbo.container.log4j;
 
-import java.util.Enumeration;
-import java.util.Properties;
-
-import org.apache.log4j.Appender;
-import org.apache.log4j.FileAppender;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.PropertyConfigurator;
-
 import com.alibaba.dubbo.common.utils.ConfigUtils;
 import com.alibaba.dubbo.container.Container;
 
+import java.util.Properties;
+
 /**
  * Log4jContainer. (SPI, Singleton, ThreadSafe)
- * 
+ *
  * @author william.liangf
  */
 public class Log4jContainer implements Container {
@@ -57,40 +51,40 @@ public class Log4jContainer implements Container {
             properties.setProperty("log4j.appender.application.DatePattern", "'.'yyyy-MM-dd");
             properties.setProperty("log4j.appender.application.layout", "org.apache.log4j.PatternLayout");
             properties.setProperty("log4j.appender.application.layout.ConversionPattern", "%d [%t] %-5p %C{6} (%F:%L) - %m%n");
-            PropertyConfigurator.configure(properties);
+            // PropertyConfigurator.configure(properties);
         }
         String subdirectory = ConfigUtils.getProperty(LOG4J_SUBDIRECTORY);
-        if (subdirectory != null && subdirectory.length() > 0) {
-            Enumeration<org.apache.log4j.Logger> ls = LogManager.getCurrentLoggers();
-            while (ls.hasMoreElements()) {
-                org.apache.log4j.Logger l = ls.nextElement();
-                if (l != null) {
-                    Enumeration<Appender> as = l.getAllAppenders();
-                    while (as.hasMoreElements()) {
-                        Appender a = as.nextElement();
-                        if (a instanceof FileAppender) {
-                            FileAppender fa = (FileAppender)a;
-                            String f = fa.getFile();
-                            if (f != null && f.length() > 0) {
-                                int i = f.replace('\\', '/').lastIndexOf('/');
-                                String path;
-                                if (i == -1) {
-                                    path = subdirectory;
-                                } else {
-                                    path = f.substring(0, i);
-                                    if (! path.endsWith(subdirectory)) {
-                                        path = path + "/" + subdirectory;
-                                    }
-                                    f = f.substring(i + 1);
-                                }
-                                fa.setFile(path + "/" + f);
-                                fa.activateOptions();
-                            }
-                        }
-                    }
-                }
-            }
-        }
+//        if (subdirectory != null && subdirectory.length() > 0) {
+//            Enumeration<org.apache.log4j.Logger> ls = LogManager.getCurrentLoggers();
+//            while (ls.hasMoreElements()) {
+//                org.apache.log4j.Logger l = ls.nextElement();
+//                if (l != null) {
+//                    Enumeration<Appender> as = l.getAllAppenders();
+//                    while (as.hasMoreElements()) {
+//                        Appender a = as.nextElement();
+//                        if (a instanceof FileAppender) {
+//                            FileAppender fa = (FileAppender) a;
+//                            String f = fa.getFile();
+//                            if (f != null && f.length() > 0) {
+//                                int i = f.replace('\\', '/').lastIndexOf('/');
+//                                String path;
+//                                if (i == -1) {
+//                                    path = subdirectory;
+//                                } else {
+//                                    path = f.substring(0, i);
+//                                    if (!path.endsWith(subdirectory)) {
+//                                        path = path + "/" + subdirectory;
+//                                    }
+//                                    f = f.substring(i + 1);
+//                                }
+//                                fa.setFile(path + "/" + f);
+//                                fa.activateOptions();
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
 
     public void stop() {
