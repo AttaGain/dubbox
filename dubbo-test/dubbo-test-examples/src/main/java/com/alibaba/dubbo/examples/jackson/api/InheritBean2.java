@@ -1,7 +1,5 @@
 package com.alibaba.dubbo.examples.jackson.api;
 
-import org.joda.time.DateTime;
-
 /**
  * Created by dylan on 14-11-22.
  */
