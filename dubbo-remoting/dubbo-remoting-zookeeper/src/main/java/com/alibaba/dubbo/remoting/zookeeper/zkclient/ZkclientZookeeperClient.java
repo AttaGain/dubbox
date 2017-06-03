@@ -28,6 +28,10 @@ public class ZkclientZookeeperClient extends AbstractZookeeperClient<IZkChildLis
                 url.getParameter(Constants.SESSION_TIMEOUT_KEY, Constants.DEFAULT_SESSION_TIMEOUT),
                 url.getParameter(Constants.TIMEOUT_KEY, Constants.DEFAULT_REGISTRY_CONNECT_TIMEOUT));
 		client.subscribeStateChanges(new IZkStateListener() {
+			@Override
+			public void handleSessionEstablishmentError(Throwable throwable) throws Exception {
+			}
+
 			public void handleStateChanged(KeeperState state) throws Exception {
 				ZkclientZookeeperClient.this.state = state;
 				if (state == KeeperState.Disconnected) {
