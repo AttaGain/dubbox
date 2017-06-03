@@ -166,7 +166,25 @@
         <maven_shade_plugin_version>3.0.0</maven_shade_plugin_version>
 
         <maven-surefire-plugin_version>2.17</maven-surefire-plugin_version>
+
+        <!--私服HOST-->
+        <maven_host>http://repo.58caimi.com</maven_host>
     </properties>
+
+    <!--私服发布定义-->
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>releases</name>
+            <url>${maven_host}/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>snapshots</name>
+            <url>${maven_host}/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencyManagement>
         <dependencies>
             <!-- Common libs -->
