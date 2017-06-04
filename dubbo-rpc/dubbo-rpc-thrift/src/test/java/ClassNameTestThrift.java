@@ -148,17 +148,21 @@ public class ClassNameTestThrift {
         super("echo");
       }
 
-      protected echo_args getEmptyArgsInstance() {
+      @Override
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public echo_args getEmptyArgsInstance() {
         return new echo_args();
       }
 
-      protected echo_result getResult(I iface, echo_args args) throws org.apache.thrift.TException {
+      public echo_result getResult(I iface, echo_args args) throws org.apache.thrift.TException {
         echo_result result = new echo_result();
         result.success = iface.echo(args.arg);
         return result;
       }
     }
-
   }
 
   public static class echo_args implements org.apache.thrift.TBase<echo_args, echo_args._Fields>, java.io.Serializable, Cloneable   {

@@ -101,7 +101,8 @@
         <jedis_version>2.9.0</jedis_version>
         <xmemcached_version>2.3.1</xmemcached_version>
         <cxf_version>3.1.11</cxf_version>
-        <thrift_version>0.8.0</thrift_version>
+        <commons_lang_version>3.5</commons_lang_version>
+        <thrift_version>0.10.0</thrift_version>
         <jfreechart_version>1.0.13</jfreechart_version>
         <hessian_version>4.0.7</hessian_version>
         <servlet_version>3.1.0</servlet_version>
@@ -291,6 +292,11 @@
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-rt-transports-http</artifactId>
                 <version>${cxf_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons_lang_version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.thrift</groupId>
