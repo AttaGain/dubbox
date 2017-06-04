@@ -15,16 +15,6 @@
  */
 package com.alibaba.dubbo.remoting.http.jetty;
 
-import com.alibaba.dubbo.remoting.http.servlet.ServletManager;
-import org.mortbay.jetty.Server;
-import org.mortbay.jetty.nio.SelectChannelConnector;
-import org.mortbay.jetty.servlet.Context;
-import org.mortbay.jetty.servlet.ServletHandler;
-import org.mortbay.jetty.servlet.ServletHolder;
-import org.mortbay.log.Log;
-import org.mortbay.log.StdErrLog;
-import org.mortbay.thread.QueuedThreadPool;
-
 import com.alibaba.dubbo.common.Constants;
 import com.alibaba.dubbo.common.URL;
 import com.alibaba.dubbo.common.logger.Logger;
@@ -32,17 +22,28 @@ import com.alibaba.dubbo.common.logger.LoggerFactory;
 import com.alibaba.dubbo.common.utils.NetUtils;
 import com.alibaba.dubbo.remoting.http.HttpHandler;
 import com.alibaba.dubbo.remoting.http.servlet.DispatcherServlet;
+import com.alibaba.dubbo.remoting.http.servlet.ServletManager;
 import com.alibaba.dubbo.remoting.http.support.AbstractHttpServer;
+import org.eclipse.jetty.server.HttpConfiguration;
+import org.eclipse.jetty.server.HttpConnectionFactory;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.ServerConnector;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+import org.eclipse.jetty.util.log.Log;
+import org.eclipse.jetty.util.log.StdErrLog;
+import org.eclipse.jetty.util.thread.QueuedThreadPool;
 
 public class JettyHttpServer extends AbstractHttpServer {
 
     private static final Logger logger = LoggerFactory.getLogger(JettyHttpServer.class);
 
-    private Server              server;
+    private Server server;
 
     private URL url;
 
-    public JettyHttpServer(URL url, final HttpHandler handler){
+    public JettyHttpServer(URL url, final HttpHandler handler) {
         super(url, handler);
 
         // modified by lishen
@@ -58,15 +59,17 @@ public class JettyHttpServer extends AbstractHttpServer {
         threadPool.setDaemon(true);
         threadPool.setMaxThreads(threads);
         threadPool.setMinThreads(threads);
+        server = new Server(threadPool);
 
-        SelectChannelConnector connector = new SelectChannelConnector();
-        if (! url.isAnyHost() && NetUtils.isValidLocalHost(url.getHost())) {
+        HttpConfiguration config = new HttpConfiguration();
+        ServerConnector connector = new ServerConnector(server, new HttpConnectionFactory(config));
+        connector.setReuseAddress(true);
+
+        if (!url.isAnyHost() && NetUtils.isValidLocalHost(url.getHost())) {
             connector.setHost(url.getHost());
         }
         connector.setPort(url.getPort());
 
-        server = new Server();
-        server.setThreadPool(threadPool);
         server.addConnector(connector);
 
         ServletHandler servletHandler = new ServletHandler();
@@ -77,7 +80,8 @@ public class JettyHttpServer extends AbstractHttpServer {
         // dubbo's original impl can't support the use of ServletContext
 //        server.addHandler(servletHandler);
         // TODO Context.SESSIONS is the best option here?
-        Context context = new Context(server, "/", Context.SESSIONS);
+        // ContextHandler.Context context = new ContextHandler.Context(server, "/", ContextHandler.Context.SESSIONS);
+        ServletContextHandler context = new ServletContextHandler(server, "/", ServletContextHandler.SESSIONS);
         context.setServletHandler(servletHandler);
         ServletManager.getInstance().addServletContext(url.getPort(), context.getServletContext());
 
@@ -85,7 +89,7 @@ public class JettyHttpServer extends AbstractHttpServer {
             server.start();
         } catch (Exception e) {
             throw new IllegalStateException("Failed to start jetty server on " + url.getAddress() + ", cause: "
-                                            + e.getMessage(), e);
+                    + e.getMessage(), e);
         }
     }
 
