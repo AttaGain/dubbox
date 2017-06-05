@@ -16,7 +16,6 @@
 package com.alibaba.dubbo.common.utils;
 
 import static org.junit.Assert.assertThat;
-import static org.junit.matchers.JUnitMatchers.containsString;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -27,6 +26,7 @@ import java.util.Set;
 
 import junit.framework.TestCase;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 public class ReflectUtilsTest extends TestCase
@@ -139,7 +139,7 @@ public class ReflectUtilsTest extends TestCase
         	ReflectUtils.findMethodByMethodSignature(TestedClass.class, "overrideMethod", null);
             fail();
         } catch (IllegalStateException expected) {
-            assertThat(expected.getMessage(), containsString(
+            assertThat(expected.getMessage(), CoreMatchers.containsString(
                     "Not unique method for method name("));
         }
     }
@@ -150,8 +150,8 @@ public class ReflectUtilsTest extends TestCase
         	ReflectUtils.findMethodByMethodSignature(TestedClass.class, "notExsited", null);
             fail();
         } catch (NoSuchMethodException expected) {
-            assertThat(expected.getMessage(), containsString("No such method "));
-            assertThat(expected.getMessage(), containsString("in class"));
+            assertThat(expected.getMessage(), CoreMatchers.containsString("No such method "));
+            assertThat(expected.getMessage(), CoreMatchers.containsString("in class"));
         }
     }
 

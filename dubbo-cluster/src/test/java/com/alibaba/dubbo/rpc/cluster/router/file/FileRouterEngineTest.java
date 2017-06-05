@@ -21,9 +21,8 @@ import java.util.List;
 
 import javax.script.ScriptEngineManager;
 
-import junit.framework.Assert;
-
 import org.easymock.EasyMock;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;

@@ -19,8 +19,8 @@ import static org.hamcrest.CoreMatchers.allOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
-import static org.junit.matchers.JUnitMatchers.containsString;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 /**
@@ -51,7 +51,7 @@ public class AtomicPositiveIntegerTest {
             fail();
         } catch (IllegalArgumentException expected) {
             assertThat(expected.getMessage(),
-                    allOf(containsString("new value"), containsString("< 0")));
+                    allOf(CoreMatchers.containsString("new value"), CoreMatchers.containsString("< 0")));
         }
     }
 
@@ -125,7 +125,7 @@ public class AtomicPositiveIntegerTest {
             i1.getAndSet(-1);
         } catch (IllegalArgumentException expected) {
             assertThat(expected.getMessage(),
-                    allOf(containsString("new value"), containsString("< 0")));
+                    allOf(CoreMatchers.containsString("new value"), CoreMatchers.containsString("< 0")));
         }
     }
 

@@ -110,28 +110,29 @@
         <validation_version>1.1.0.Final</validation_version>
         <hibernate_validator_version>5.4.1.Final</hibernate_validator_version>
         <jcache_version>1.0.0</jcache_version>
-        <sca_version>2.0-M5.1</sca_version>
-        <guice_version>3.0</guice_version>
-        <cglib_version>2.2</cglib_version>
-        <webx_version>3.0.8</webx_version>
+        <sca_version>2.0.1</sca_version>
+        <guice_version>4.1.0</guice_version>
+        <cglib_version>3.2.5</cglib_version>
+        <webx_version>3.2.4</webx_version>
         <jackson_version>2.8.8</jackson_version>
         <commons_pool_version>2.4.2</commons_pool_version>
         <tomcat_embed_version>8.5.15</tomcat_embed_version>
         <tomcat_embed_logging_juli_version>8.5.2</tomcat_embed_logging_juli_version>
-        <javax_ws_rs_version>2.0</javax_ws_rs_version>
-        <jboss_resteasy_version>3.0.7.Final</jboss_resteasy_version>
+        <javax_ws_rs_version>2.1-m07</javax_ws_rs_version>
+        <jboss_resteasy_version>3.1.3.Final</jboss_resteasy_version>
         <esotericsoftware_kryo_version>2.24.0</esotericsoftware_kryo_version>
-        <javakaffee_kryo_version>0.26</javakaffee_kryo_version>
-        <ruedigermoeller_fst_version>1.55</ruedigermoeller_fst_version>
+        <javakaffee_kryo_version>0.41</javakaffee_kryo_version>
+        <ruedigermoeller_fst_version>2.50</ruedigermoeller_fst_version>
         <!-- Log libs -->
         <slf4j_version>1.7.25</slf4j_version>
         <jcl_version>1.1</jcl_version>
         <log4j_version>2.8.2</log4j_version>
         <logback_version>1.2.3</logback_version>
         <!-- Test libs -->
-        <junit_version>4.10</junit_version>
-        <easymock_version>3.0</easymock_version>
-        <jmockit_version>0.999.8</jmockit_version>
+        <junit_version>4.12</junit_version>
+        <easymock_version>3.4</easymock_version>
+        <easymockclassextension_version>3.2</easymockclassextension_version>
+        <jmockit_version>1.32</jmockit_version>
         <!-- Build args -->
         <!--<argline>-server -Xms64m -Xmx64m -XX:PermSize=64m -XX:MaxPermSize=64m</argline>-->
         <skip_maven_deploy>false</skip_maven_deploy>
@@ -418,7 +419,7 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>com.googlecode.jmockit</groupId>
+                <groupId>org.jmockit</groupId>
                 <artifactId>jmockit</artifactId>
                 <version>${jmockit_version}</version>
                 <scope>test</scope>
@@ -426,7 +427,7 @@
             <dependency>
                 <groupId>org.easymock</groupId>
                 <artifactId>easymockclassextension</artifactId>
-                <version>${easymock_version}</version>
+                <version>${easymockclassextension_version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -515,7 +516,7 @@
             <artifactId>easymockclassextension</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.googlecode.jmockit</groupId>
+            <groupId>org.jmockit</groupId>
             <artifactId>jmockit</artifactId>
         </dependency>
     </dependencies>
