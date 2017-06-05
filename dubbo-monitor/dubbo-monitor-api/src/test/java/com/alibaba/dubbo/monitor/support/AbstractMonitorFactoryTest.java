@@ -17,7 +17,7 @@ package com.alibaba.dubbo.monitor.support;
 
 import java.util.List;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.Test;
 

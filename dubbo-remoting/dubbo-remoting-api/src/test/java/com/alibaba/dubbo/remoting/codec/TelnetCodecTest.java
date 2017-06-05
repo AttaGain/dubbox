@@ -34,7 +34,7 @@ import com.alibaba.dubbo.remoting.buffer.ChannelBuffer;
 import com.alibaba.dubbo.remoting.buffer.ChannelBuffers;
 import com.alibaba.dubbo.remoting.telnet.codec.TelnetCodec;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 /**
  * @author chao.liuc

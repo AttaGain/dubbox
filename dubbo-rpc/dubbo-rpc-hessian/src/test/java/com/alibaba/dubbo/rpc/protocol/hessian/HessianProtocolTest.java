@@ -16,7 +16,7 @@
 package com.alibaba.dubbo.rpc.protocol.hessian;
 
 import static org.junit.Assert.fail;
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.Test;
 

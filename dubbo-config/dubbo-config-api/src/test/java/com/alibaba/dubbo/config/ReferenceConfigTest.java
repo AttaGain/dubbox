@@ -21,7 +21,7 @@ import com.alibaba.dubbo.common.Constants;
 import com.alibaba.dubbo.config.api.DemoService;
 import com.alibaba.dubbo.config.provider.impl.DemoServiceImpl;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 /**
  * @author <a href="mailto:gang.lvg@alibaba-inc.com">kimi</a>

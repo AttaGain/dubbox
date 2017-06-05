@@ -1,6 +1,6 @@
 package com.alibaba.dubbo.remoting.buffer;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 /**
  * @author <a href="mailto:gang.lvg@taobao.com">kimi</a>

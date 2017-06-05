@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 
 import java.lang.reflect.Field;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -43,7 +43,7 @@ import com.alibaba.dubbo.common.extensionloader.ext8_add.AddExt2;
 import com.alibaba.dubbo.common.extensionloader.ext8_add.AddExt3;
 import com.alibaba.dubbo.common.extensionloader.ext8_add.AddExt4;
 import com.alibaba.dubbo.common.extensionloader.ext8_add.impl.*;
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.Test;
 

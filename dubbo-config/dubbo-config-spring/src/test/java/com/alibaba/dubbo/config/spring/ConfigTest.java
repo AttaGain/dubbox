@@ -63,7 +63,7 @@ import com.alibaba.dubbo.rpc.RpcException;
 import com.alibaba.dubbo.rpc.service.GenericException;
 import com.alibaba.dubbo.rpc.service.GenericService;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 
 /**

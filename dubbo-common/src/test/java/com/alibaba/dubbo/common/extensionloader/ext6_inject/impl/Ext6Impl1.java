@@ -15,7 +15,7 @@
  */
 package com.alibaba.dubbo.common.extensionloader.ext6_inject.impl;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import com.alibaba.dubbo.common.URL;
 import com.alibaba.dubbo.common.extensionloader.ext1.SimpleExt;

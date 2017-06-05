@@ -32,7 +32,7 @@ import com.alibaba.dubbo.remoting.exchange.ExchangeServer;
 import com.alibaba.dubbo.remoting.exchange.Exchangers;
 import com.alibaba.dubbo.remoting.transport.dispatcher.FakeChannelHandlers;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 /**
  * @author <a href="mailto:gang.lvg@alibaba-inc.com">kimi</a>

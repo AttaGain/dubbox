@@ -15,7 +15,7 @@
  */
 package com.alibaba.dubbo.rpc.cluster.configurator.absent;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.Test;
 

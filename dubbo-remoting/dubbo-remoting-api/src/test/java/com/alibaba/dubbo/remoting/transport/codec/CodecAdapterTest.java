@@ -14,7 +14,7 @@ import com.alibaba.dubbo.remoting.buffer.ChannelBuffers;
 import com.alibaba.dubbo.remoting.codec.ExchangeCodecTest;
 import com.alibaba.dubbo.remoting.telnet.codec.TelnetCodec;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 /**
  * @author <a href="mailto:gang.lvg@taobao.com">kimi</a>

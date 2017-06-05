@@ -15,7 +15,7 @@
  */
 package com.alibaba.dubbo.remoting.transport.netty;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import junit.framework.TestCase;
 
 import org.junit.Test;

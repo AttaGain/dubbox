@@ -15,7 +15,7 @@
  */
 package com.alibaba.dubbo.common.utils;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import junit.framework.TestCase;
 
 public class NetUtilsTest extends TestCase {
