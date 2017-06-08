@@ -19,7 +19,7 @@
     <parent>
         <groupId>com.alibaba</groupId>
         <artifactId>dubbo-demo</artifactId>
-        <version>3.3.0</version>
+        <version>3.3.2</version>
     </parent>
     <artifactId>dubbo-demo-consumer</artifactId>
     <packaging>jar</packaging>
@@ -162,7 +162,7 @@
 
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-jackson-provider</artifactId>
+            <artifactId>resteasy-jackson2-provider</artifactId>
         </dependency>
 
         <dependency>
@@ -220,7 +220,9 @@
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
-                    <descriptor>src/main/assembly/assembly.xml</descriptor>
+                    <descriptors>
+                        <descriptor>src/main/assembly/assembly.xml</descriptor>
+                    </descriptors>
                 </configuration>
                 <executions>
                     <execution>

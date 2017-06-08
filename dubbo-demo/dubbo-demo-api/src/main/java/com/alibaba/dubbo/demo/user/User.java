@@ -15,7 +15,7 @@
  */
 package com.alibaba.dubbo.demo.user;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;

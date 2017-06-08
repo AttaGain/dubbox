@@ -19,7 +19,7 @@
     <parent>
         <groupId>com.alibaba</groupId>
         <artifactId>dubbo-parent</artifactId>
-        <version>3.3.0</version>
+        <version>3.3.2</version>
     </parent>
     <artifactId>dubbo</artifactId>
     <packaging>jar</packaging>
@@ -224,7 +224,7 @@
                 </exclusion>
                 <exclusion>
                     <groupId>org.jboss.resteasy</groupId>
-                    <artifactId>resteasy-jackson-provider</artifactId>
+                    <artifactId>resteasy-jackson2-provider</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>org.jboss.resteasy</groupId>

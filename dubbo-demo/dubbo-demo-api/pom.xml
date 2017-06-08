@@ -19,7 +19,7 @@
     <parent>
         <groupId>com.alibaba</groupId>
         <artifactId>dubbo-demo</artifactId>
-        <version>3.3.0</version>
+        <version>3.3.2</version>
     </parent>
     <artifactId>dubbo-demo-api</artifactId>
     <packaging>jar</packaging>
@@ -49,12 +49,18 @@
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
-            <version>1.2</version>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.12</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
         </dependency>
     </dependencies>
 </project>
