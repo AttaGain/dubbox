@@ -1,12 +1,12 @@
 /**
  * Copyright 1999-2014 dangdang.com.
- * <p>
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -26,7 +26,6 @@ import com.alibaba.dubbo.remoting.http.servlet.ServletManager;
 import com.alibaba.dubbo.remoting.http.support.AbstractHttpServer;
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
-import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
 
 import java.io.File;
@@ -52,18 +51,19 @@ public class TomcatHttpServer extends AbstractHttpServer {
         tomcat = new Tomcat();
         tomcat.setBaseDir(baseDir);
         tomcat.setPort(url.getPort());
-
-        Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
-        connector.setProperty(
+        tomcat.getConnector().setProperty(
                 "maxThreads", String.valueOf(url.getParameter(Constants.THREADS_KEY, Constants.DEFAULT_THREADS)));
 //        tomcat.getConnector().setProperty(
 //                "minSpareThreads", String.valueOf(url.getParameter(Constants.THREADS_KEY, Constants.DEFAULT_THREADS)));
-        connector.setProperty(
+
+        tomcat.getConnector().setProperty(
                 "maxConnections", String.valueOf(url.getParameter(Constants.ACCEPTS_KEY, -1)));
-        connector.setProperty("URIEncoding", "UTF-8");
-        connector.setProperty("connectionTimeout", "60000");
-        connector.setProperty("maxKeepAliveRequests", "-1");
-        tomcat.setConnector(connector);
+
+        tomcat.getConnector().setProperty("URIEncoding", "UTF-8");
+        tomcat.getConnector().setProperty("connectionTimeout", "60000");
+
+        tomcat.getConnector().setProperty("maxKeepAliveRequests", "-1");
+        tomcat.getConnector().setProtocol("org.apache.coyote.http11.Http11NioProtocol");
 
         Context context = tomcat.addContext("/", baseDir);
         Tomcat.addServlet(context, "dispatcher", new DispatcherServlet());
