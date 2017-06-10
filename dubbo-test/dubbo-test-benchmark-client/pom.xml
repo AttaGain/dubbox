@@ -14,26 +14,26 @@
  - limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.alibaba</groupId>
-		<artifactId>dubbo-test</artifactId>
-		<version>3.3.2</version>
-	</parent>
-	<artifactId>dubbo-test-benchmark-client</artifactId>
-	<packaging>jar</packaging>
-	<name>${project.artifactId}</name>
-	<description>The benchmark test module of dubbo project</description>
-	<properties>
-		<skip_maven_deploy>true</skip_maven_deploy>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>dubbo</artifactId>
-			<version>${project.parent.version}</version>
-		</dependency>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo-test</artifactId>
+        <version>3.3.2</version>
+    </parent>
+    <artifactId>dubbo-test-benchmark-client</artifactId>
+    <packaging>jar</packaging>
+    <name>${project.artifactId}</name>
+    <description>The benchmark test module of dubbo project</description>
+    <properties>
+        <skip_maven_deploy>true</skip_maven_deploy>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo-test-benchmark-api</artifactId>
@@ -150,7 +150,7 @@
             <version>2.0</version>
             <!--<scope>provided</scope>-->
         </dependency>
-	</dependencies>
+    </dependencies>
     <build>
         <resources>
             <resource>
@@ -187,7 +187,9 @@
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
-                    <descriptor>src/assembly/assembly.xml</descriptor>
+                    <descriptors>
+                        <descriptor>src/assembly/assembly.xml</descriptor>
+                    </descriptors>
                 </configuration>
                 <executions>
                     <execution>
