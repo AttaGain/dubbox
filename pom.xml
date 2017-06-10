@@ -20,7 +20,7 @@
         <version>2.0</version> </parent> -->
     <groupId>com.alibaba</groupId>
     <artifactId>dubbo-parent</artifactId>
-    <version>3.3.2</version>
+    <version>3.3.3</version>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
     <description>The parent project of dubbo</description>
@@ -84,7 +84,7 @@
     </profiles>
     <properties>
         <!-- Common libs -->
-        <spring.bom.version>4.3.8.RELEASE</spring.bom.version>
+        <spring.bom.version>4.3.9.RELEASE</spring.bom.version>
         <javassist_version>3.21.0-GA</javassist_version>
         <netty_version>3.10.6.Final</netty_version>
         <mina_version>2.0.16</mina_version>
