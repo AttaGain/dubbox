@@ -171,7 +171,7 @@
         <maven-surefire-plugin_version>2.17</maven-surefire-plugin_version>
 
         <!--私服HOST-->
-        <maven_host>http://repo.58caimi.com</maven_host>
+        <maven_host>http://repo.integrity.com.cn</maven_host>
     </properties>
 
     <!--私服发布定义-->
